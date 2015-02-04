@@ -165,7 +165,7 @@
 
 
 <p> <strong>注意</strong>：zsh下若出现‘*’, ‘(’, ‘|’, ‘&lt;’, ‘[’, or ‘?’符号，会将其识别为查找文件名的通配符，所以会导致命令没法识别，如rake new_post[&lsquo;article name&rsquo;]  <br/>
- <strong>解决方法</strong>：1)可使用rake &ldquo;new_post[article name]&rdquo;; 2)<a href="http://octopress.org/docs/blogging/">官网提供的方法</a>：添加<code>alias rake=noglob rake</code> 到zsh的配置文件($ ~/.zshrc) 防止<code>zsh: no matches found</code>错误。按照方法2修改后记得重启下终端，否则修改没法生效。</p></li>
+ <strong>解决方法</strong>：1)可使用rake &ldquo;new_post[article name]&rdquo;; 2)<a href="http://octopress.org/docs/blogging/">官网提供的方法</a>：添加<code>alias rake="noglob rake"</code> 到zsh的配置文件($ ~/.zshrc) 防止<code>zsh: no matches found</code>错误。按照方法2修改后记得重启下终端，否则修改没法生效。</p></li>
 </ol>
 
 </div>
