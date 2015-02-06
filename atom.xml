@@ -4,7 +4,7 @@
   <title><![CDATA[Benna's Blog]]></title>
   <link href="http://bennachen.github.io/atom.xml" rel="self"/>
   <link href="http://bennachen.github.io/"/>
-  <updated>2015-02-04T17:24:33+08:00</updated>
+  <updated>2015-02-06T12:02:36+08:00</updated>
   <id>http://bennachen.github.io/</id>
   <author>
     <name><![CDATA[bennachen]]></name>
@@ -12,6 +12,73 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress自定义设置]]></title>
+    <link href="http://bennachen.github.io/blog/2015/02/04/octopresszi-ding-yi-she-zhi/"/>
+    <updated>2015-02-04T17:38:05+08:00</updated>
+    <id>http://bennachen.github.io/blog/2015/02/04/octopresszi-ding-yi-she-zhi</id>
+    <content type="html"><![CDATA[<h3>基础设置</h3>
+
+<p>修改<code>_config.yml</code>文件中的<code>title</code>,<code>subtitle</code>,<code>author</code>，依次为标题、副标题、作者。</p>
+
+<p>修改<code>.source/blog/archives/index.html</code>的<code>title</code>可更改文章列表的名称。</p>
+
+<p><code>.themes/classic/source/_includes/custom/navigation.html</code>中，可进行导航自定义。</p>
+
+<p>编辑<code>_config.yml</code>的<code>date_format</code>修改日期格式</p>
+
+<h3>代码语法高亮</h3>
+
+<p>官网提供了多种语法高亮的<a href="http://octopress.org/docs/blogging/code/">方法</a>，再次只记录3种：</p>
+
+<ul>
+<li>普通内嵌代码块，即含有<code>&lt;div class='bogus-wrapper'&gt;&lt;notextile&gt;&lt;figure&gt;</code>和<code>&lt;figcaption&gt;</code>和可选下载链接</li>
+<li>从自身文件系统插入代码块，可具有下载链接</li>
+<li>使用Gist代码内嵌</li>
+</ul>
+
+
+<h4>普通代码块</h4>
+
+<p>写法如下：</p>
+
+<pre><code>``` [language] [title] [url] [link text] [linenos:false] [start:#] [mark:#,#-#]
+code snippet
+```
+</code></pre>
+
+<ul>
+<li>[linenos]: 高亮代码块是否添加行号</li>
+<li>[start:#]: 行号从哪儿开始</li>
+<li>[mark:#,#-#]: 标记某行代码</li>
+</ul>
+
+
+<p><code>注意</code>：书写时，三个反引号需顶格，否则高亮无法生效。还有与有序标记有所冲突，导致序号从新开始。</p>
+
+<p>另一种写法如下(%前无需空格，由于书写展示才添加的)：</p>
+
+<pre><code>{ % codeblock [title] [lang:language] [url] [link text] %}
+code snippet
+{ % endcodeblock %}
+</code></pre>
+
+<p>效果如下：</p>
+
+<p><figure class='code'><figcaption><span>Discover if a number is prime</span><a href='http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="k">class</span> <span class="nc">Fixnum</span>
+</span><span class='line'>   <span class="k">def</span> <span class="nf">prime?</span>
+</span><span class='line'>     <span class="p">(</span><span class="s1">&#39;1&#39;</span> <span class="o">*</span> <span class="nb">self</span><span class="p">)</span> <span class="o">!~</span> <span class="sr">/^1?$|^(11+?)\1+$/</span>
+</span><span class='line'>   <span class="k">end</span>
+</span><span class='line'> <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress搭建]]></title>
@@ -22,22 +89,25 @@
 
 <p>官网搭建步骤<a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a></p>
 
-<ol>
-<li><p>安装<a href="http://git-scm.com/">Git</a>. 用<a href="http://brew.sh/index_zh-cn.html">Homebrew</a>安装或更新比较方便。安装好brew后可用如下命令诊断安装中出现的问题并提示修复方法
- <code>
- brew doctor
-</code>
- 之后安装git：</p>
+<p>1.安装<a href="http://git-scm.com/">Git</a>. 用<a href="http://brew.sh/index_zh-cn.html">Homebrew</a>安装或更新比较方便。安装好brew后可用如下命令诊断安装中出现的问题并提示修复方法</p>
 
-<pre><code class="`"> brew install git
-</code></pre></li>
-<li>使用<a href="http://octopress.org/docs/setup/rvm/">RVM</a>或<a href="http://octopress.org/docs/setup/rbenv/">rbenv</a>安装Ruby1.9.3以上版本</li>
-</ol>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">brew</span> <span class="n">doctor</span>
+</span></code></pre></td></tr></table></div></figure>
 
+
+<p>之后安装git：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">brew</span> <span class="n">install</span> <span class="n">git</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2.使用<a href="http://octopress.org/docs/setup/rvm/">RVM</a>或<a href="http://octopress.org/docs/setup/rbenv/">rbenv</a>安装Ruby1.9.3以上版本</p>
 
 <h3>搭建octopress</h3>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -47,61 +117,66 @@
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git octopress
-</span><span class='line'>cd octopress
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">git</span> <span class="nb">clone</span> <span class="ss">git</span><span class="p">:</span><span class="sr">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">imathis</span><span class="o">/</span><span class="n">octopress</span><span class="o">.</span><span class="n">git</span>    <span class="n">octopress</span>
+</span><span class='line'><span class="n">cd</span> <span class="n">octopress</span>
 </span><span class='line'>
-</span><span class='line'># 安装依赖
-</span><span class='line'>gem install bundler
-</span><span class='line'>rbenv rehash    # If you use rbenv, rehash to be able to run the bundle command
-</span><span class='line'>bundle install
+</span><span class='line'><span class="c1"># 安装依赖</span>
+</span><span class='line'><span class="n">gem</span> <span class="n">install</span> <span class="n">bundler</span>
+</span><span class='line'><span class="n">rbenv</span> <span class="n">rehash</span>    <span class="c1"># If you use rbenv, rehash to be able to run the bundle command</span>
+</span><span class='line'><span class="n">bundle</span> <span class="n">install</span>
 </span><span class='line'>
-</span><span class='line'># 安装默认主题
-</span><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="c1"># 安装默认主题</span>
+</span><span class='line'><span class="n">rake</span> <span class="n">install</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>本地安装后可用如下命令，在本地4000端口进行预览：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">rake</span> <span class="n">preview</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>部署到github pages</h3>
 
-<ol>
-<li>拥有一个github账号</li>
-<li>创建repository.<code>repository name</code>设置<code>[your_username].github.io</code>，[your_username] 是你 Github 上的账户名。</li>
-<li><p>终端执行：</p>
+<p>1.拥有一个github账号<br/>
+2.创建repository.<code>repository name</code>设置<code>[your_username].github.io</code>，[your_username] 是你 Github 上的账户名。  <br/>
+3.终端执行：</p>
 
-<pre><code class="`"> rake setup_github_pages
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">rake</span> <span class="n">setup_github_pages</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>根据提示输入上述创建的repo，再执行如下：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">rake</span> <span class="n">generate</span>
+</span><span class='line'><span class="n">rake</span> <span class="n">deploy</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>需执行两条命令，不想这么麻烦？可直接使用：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">rake</span> <span class="n">gen_deploy</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>即可在<a href="http://your_username.github.io/">http://your_username.github.io/</a> 看到创建的页面。太方便了！！</p>
+
+<p>4.写博客
+    - rake new_post[&lsquo;article name&rsquo;] 在<code>octopress/source/_posts</code>下会生成该文章文件，打开文件在头部下方填入文章内容即可
+    - rake generate 生成静态文件
+    - rake deploy 发布文件
+    - rake watch 检测文件变化，实时生成新内容
+    - rake preview 在本机4000端口生成访问内容
+    - rake gen_deploy 生成并发布博文</p>
+
+<pre><code>**注意**：zsh下若出现‘*’, ‘(’, ‘|’, ‘&lt;’, ‘[’, or ‘?’符号，会将其识别为查找文件名的通配符，所以会导致命令没法识别，如rake new_post['article name']    
+**解决方法**：1)可使用rake "new_post[article name]"; 2)[官网提供的方法](http://octopress.org/docs/blogging/)：添加`alias rake="noglob rake"` 到zsh的配置文件($ ~/.zshrc) 防止` zsh: no matches found`错误。按照方法2修改后记得重启下终端，否则修改没法生效。
 </code></pre>
-
-<p> 根据提示输入上述创建的repo，再执行如下：</p>
-
-<pre><code class="`"> rake generate
- rake deploy
-</code></pre>
-
-<p> 需执行两条命令，不想这么麻烦？可直接使用：
- <code>
- rake gen_deploy
-</code>
- 即可在<a href="http://your_username.github.io/">http://your_username.github.io/</a> 看到创建的页面。太方便了！！</p></li>
-<li>写博客
-
-<ul>
-<li>rake new_post[&lsquo;article name&rsquo;] 在<code>octopress/source/_posts</code>下会生成该文章文件，打开文件在头部下方填入文章内容即可</li>
-<li>rake generate 生成静态文件</li>
-<li>rake deploy 发布文件</li>
-<li>rake watch 检测文件变化，实时生成新内容</li>
-<li>rake preview 在本机4000端口生成访问内容</li>
-<li>rake gen_deploy 生成并发布博文</li>
-</ul>
-
-
-<p> <strong>注意</strong>：zsh下若出现‘*’, ‘(’, ‘|’, ‘&lt;’, ‘[’, or ‘?’符号，会将其识别为查找文件名的通配符，所以会导致命令没法识别，如rake new_post[&lsquo;article name&rsquo;]  <br/>
- <strong>解决方法</strong>：1)可使用rake &ldquo;new_post[article name]&rdquo;; 2)<a href="http://octopress.org/docs/blogging/">官网提供的方法</a>：添加<code>alias rake="noglob rake"</code> 到zsh的配置文件($ ~/.zshrc) 防止<code>zsh: no matches found</code>错误。按照方法2修改后记得重启下终端，否则修改没法生效。</p></li>
-</ol>
-
 ]]></content>
   </entry>
   
