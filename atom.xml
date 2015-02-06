@@ -4,7 +4,7 @@
   <title><![CDATA[Benna's Blog]]></title>
   <link href="http://bennachen.github.io/atom.xml" rel="self"/>
   <link href="http://bennachen.github.io/"/>
-  <updated>2015-02-06T12:33:20+08:00</updated>
+  <updated>2015-02-06T16:29:53+08:00</updated>
   <id>http://bennachen.github.io/</id>
   <author>
     <name><![CDATA[bennachen]]></name>
@@ -20,22 +20,27 @@
     <id>http://bennachen.github.io/blog/2015/02/04/octopresszi-ding-yi-she-zhi</id>
     <content type="html"><![CDATA[<h3>基础设置</h3>
 
-<p>修改<code>_config.yml</code>文件中的<code>title</code>,<code>subtitle</code>,<code>author</code>，依次为标题、副标题、作者。</p>
+<p><strong>标题、副标题、作者</strong>: 依次修改<code>_config.yml</code>文件中的<code>title</code>,<code>subtitle</code>,<code>author</code>。</p>
 
-<p>修改<code>.source/blog/archives/index.html</code>的<code>title</code>可更改文章列表的名称。</p>
+<p><strong>文章列表的名称</strong>: 修改<code>.source/blog/archives/index.html</code>的<code>title</code>。</p>
 
-<p><code>.themes/classic/source/_includes/custom/navigation.html</code>中，可进行导航自定义。</p>
+<p><strong>导航自定义</strong>: <code>source/_includes/custom/navigation.html</code>中，可进行。</p>
 
-<p>编辑<code>_config.yml</code>的<code>date_format</code>修改日期格式</p>
+<p><strong>日期格式</strong>: 编辑<code>_config.yml</code>的<code>date_format</code>，格式<a href="http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime">点此</a>。</p>
+
+<!-- more -->
+
+
+<p><strong>首页不显示全文</strong>: 在新建的post的合适处添加<code>&lt;!--more--&gt;</code>，在首页的文章尾部会出现<code>Read on</code>。</p>
 
 <h3>代码语法高亮</h3>
 
 <p>官网提供了多种语法高亮的<a href="http://octopress.org/docs/blogging/code/">方法</a>，再次只记录3种：</p>
 
 <ul>
-<li>普通内嵌代码块，即含有<code>&lt;div class='bogus-wrapper'&gt;&lt;notextile&gt;&lt;figure&gt;</code>和<code>&lt;figcaption&gt;</code>和可选下载链接</li>
-<li>从自身文件系统插入代码块，可具有下载链接</li>
-<li>使用Gist代码内嵌</li>
+<li>普通内嵌代码块，即含有<code>&lt;figure&gt;</code>和<code>&lt;figcaption&gt;</code>和可选下载链接</li>
+<li>从本地文件中引入代码块，可具有下载链接</li>
+<li>引用Gist内嵌代码</li>
 </ul>
 
 
@@ -66,17 +71,29 @@ code snippet
 
 <p>效果如下：</p>
 
-<p><figure class='code'><figcaption><span>Discover if a number is prime</span><a href='http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>Discover if a number is prime</span><a href='http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/'>Source </a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="k">class</span> <span class="nc">Fixnum</span>
-</span><span class='line'>   <span class="k">def</span> <span class="nf">prime?</span>
-</span><span class='line'>     <span class="p">(</span><span class="s1">&#39;1&#39;</span> <span class="o">*</span> <span class="nb">self</span><span class="p">)</span> <span class="o">!~</span> <span class="sr">/^1?$|^(11+?)\1+$/</span>
-</span><span class='line'>   <span class="k">end</span>
-</span><span class='line'> <span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Fixnum</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">prime?</span>
+</span><span class='line'>    <span class="p">(</span><span class="s1">&#39;1&#39;</span> <span class="o">*</span> <span class="nb">self</span><span class="p">)</span> <span class="o">!~</span> <span class="sr">/^1?$|^(11+?)\1+$/</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>从本地文件引入代码块</h4>
+
+<p>写法如下：</p>
+
+<pre><code>{ % include_code [title] [lang:language] path/to/file %}
+</code></pre>
+
+<p>这种写法默认的代码存放地址在<code>source/downloads/code</code>,修改可编辑<code>_config.yml</code>的<code>code_dir</code>字段，详情见<a href="http://octopress.org/docs/plugins/include-code/">官方地址</a>。</p>
+
+<h4>引用gist内嵌代码</h4>
 ]]></content>
   </entry>
   
@@ -101,6 +118,9 @@ code snippet
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">brew</span> <span class="n">install</span> <span class="n">git</span>
 </span></code></pre></td></tr></table></div></figure>
+
+
+<!-- more -->
 
 
 <p>2.使用<a href="http://octopress.org/docs/setup/rvm/">RVM</a>或<a href="http://octopress.org/docs/setup/rbenv/">rbenv</a>安装Ruby1.9.3以上版本</p>
@@ -166,33 +186,20 @@ code snippet
 
 <p>即可在<a href="http://your_username.github.io/">http://your_username.github.io/</a> 看到创建的页面。太方便了！！</p>
 
-<p>4.写博客
-    - rake new_post[&lsquo;article name&rsquo;] 在<code>octopress/source/_posts</code>下会生成该文章文件，打开文件在头部下方填入文章内容即可
-    - rake generate 生成静态文件
-    - rake deploy 发布文件
-    - rake watch 检测文件变化，实时生成新内容
-    - rake preview 在本机4000端口生成访问内容
-    - rake gen_deploy 生成并发布博文</p>
+<p>4.写博客</p>
 
-<pre><code>**注意**：zsh下若出现‘*’, ‘(’, ‘|’, ‘&lt;’, ‘[’, or ‘?’符号，会将其识别为查找文件名的通配符，所以会导致命令没法识别，如rake new_post['article name']    
-**解决方法**：1)可使用rake "new_post[article name]"; 2)[官网提供的方法](http://octopress.org/docs/blogging/)：添加`alias rake="noglob rake"` 到zsh的配置文件($ ~/.zshrc) 防止` zsh: no matches found`错误。按照方法2修改后记得重启下终端，否则修改没法生效。
-</code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[开帖]]></title>
-    <link href="http://bennachen.github.io/blog/2015/02/01/kai-tie/"/>
-    <updated>2015-02-01T20:48:00+08:00</updated>
-    <id>http://bennachen.github.io/blog/2015/02/01/kai-tie</id>
-    <content type="html"><![CDATA[<pre><code>dkfsdf
-dsf
-df
-</code></pre>
+<ul>
+<li>rake new_post[&lsquo;article name&rsquo;] 在<code>octopress/source/_posts</code>下会生成该文章文件，打开文件在头部下方填入文章内容即可</li>
+<li>rake generate 生成静态文件</li>
+<li>rake deploy 发布文件</li>
+<li>rake watch 检测文件变化，实时生成新内容</li>
+<li>rake preview 在本机4000端口生成访问内容</li>
+<li>rake gen_deploy 生成并发布博文</li>
+</ul>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>第三方第三方</span></code></pre></td></tr></table></div></figure>
 
+<p><strong>注意</strong>：zsh下若出现‘*’, ‘(’, ‘|’, ‘&lt;’, ‘[’, or ‘?’符号，会将其识别为查找文件名的通配符，所以会导致命令没法识别，如rake new_post[&lsquo;article name&rsquo;]  <br/>
+<strong>解决方法</strong>：1)可使用rake &ldquo;new_post[article name]&rdquo;; 2)<a href="http://octopress.org/docs/blogging/">官网提供的方法</a>：添加<code>alias rake="noglob rake"</code> 到zsh的配置文件($ ~/.zshrc) 防止<code>zsh: no matches found</code>错误。按照方法2修改后记得重启下终端，否则修改没法生效。</p>
 ]]></content>
   </entry>
   
