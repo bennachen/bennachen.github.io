@@ -4,7 +4,7 @@
   <title><![CDATA[Benna's Blog]]></title>
   <link href="http://bennachen.github.io/atom.xml" rel="self"/>
   <link href="http://bennachen.github.io/"/>
-  <updated>2015-02-06T16:29:53+08:00</updated>
+  <updated>2015-02-07T10:49:20+08:00</updated>
   <id>http://bennachen.github.io/</id>
   <author>
     <name><![CDATA[bennachen]]></name>
@@ -22,7 +22,7 @@
 
 <p><strong>标题、副标题、作者</strong>: 依次修改<code>_config.yml</code>文件中的<code>title</code>,<code>subtitle</code>,<code>author</code>。</p>
 
-<p><strong>文章列表的名称</strong>: 修改<code>.source/blog/archives/index.html</code>的<code>title</code>。</p>
+<p><strong>文章列表的名称</strong>: 修改<code>source/blog/archives/index.html</code>的<code>title</code>。</p>
 
 <p><strong>导航自定义</strong>: <code>source/_includes/custom/navigation.html</code>中，可进行。</p>
 
@@ -94,6 +94,29 @@ code snippet
 <p>这种写法默认的代码存放地址在<code>source/downloads/code</code>,修改可编辑<code>_config.yml</code>的<code>code_dir</code>字段，详情见<a href="http://octopress.org/docs/plugins/include-code/">官方地址</a>。</p>
 
 <h4>引用gist内嵌代码</h4>
+
+<p>写法如下：</p>
+
+<pre><code>{ % gist gist_id [filename] %}
+</code></pre>
+
+<p>如需要语法高亮可添加文件后缀。
+效果如下：</p>
+
+<div><script src='https://gist.github.com/4321346.js?file=gistfile1.diff'></script>
+<noscript><pre><code>@@ -590,7 +590,7 @@ class SpritesTest &lt; Test::Unit::TestCase
+  it &quot;should generate a sprite from nested folders&quot; do
+    css = render &lt;&lt;-SCSS
+-     @import &quot;nested/*.png&quot;;
++     @import &quot;nested/**/*.png&quot;;
+      @include all-nested-sprites;
+    SCSS
+    assert_correct css, &lt;&lt;-CSS</code></pre></noscript></div>
+
+
+<h3>插图</h3>
+
+<p>图片存放地址为<code>source/images</code>，然后在post中直接引用。</p>
 ]]></content>
   </entry>
   
