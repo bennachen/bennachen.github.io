@@ -4,7 +4,7 @@
   <title><![CDATA[Benna's Blog]]></title>
   <link href="http://bennachen.github.io/atom.xml" rel="self"/>
   <link href="http://bennachen.github.io/"/>
-  <updated>2015-02-07T10:49:20+08:00</updated>
+  <updated>2015-02-13T10:15:58+08:00</updated>
   <id>http://bennachen.github.io/</id>
   <author>
     <name><![CDATA[bennachen]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Octopress自定义设置]]></title>
-    <link href="http://bennachen.github.io/blog/2015/02/04/octopresszi-ding-yi-she-zhi/"/>
+    <link href="http://bennachen.github.io/blog/20150204/octopresszi-ding-yi-she-zhi/"/>
     <updated>2015-02-04T17:38:05+08:00</updated>
-    <id>http://bennachen.github.io/blog/2015/02/04/octopresszi-ding-yi-she-zhi</id>
+    <id>http://bennachen.github.io/blog/20150204/octopresszi-ding-yi-she-zhi</id>
     <content type="html"><![CDATA[<h3>基础设置</h3>
 
 <p><strong>标题、副标题、作者</strong>: 依次修改<code>_config.yml</code>文件中的<code>title</code>,<code>subtitle</code>,<code>author</code>。</p>
@@ -122,9 +122,9 @@ code snippet
   
   <entry>
     <title type="html"><![CDATA[Octopress搭建]]></title>
-    <link href="http://bennachen.github.io/blog/2015/02/04/octopressda-jian/"/>
+    <link href="http://bennachen.github.io/blog/20150204/octopressda-jian/"/>
     <updated>2015-02-04T10:25:41+08:00</updated>
-    <id>http://bennachen.github.io/blog/2015/02/04/octopressda-jian</id>
+    <id>http://bennachen.github.io/blog/20150204/octopressda-jian</id>
     <content type="html"><![CDATA[<h3>搭建之前</h3>
 
 <p>官网搭建步骤<a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a></p>

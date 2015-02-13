@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://bennachen.github.io/blog/2015/02/04/octopresszi-ding-yi-she-zhi/</loc>
+    <loc>http://bennachen.github.io/blog/20150204/octopresszi-ding-yi-she-zhi/</loc>
     <lastmod>2015-02-04T17:38:05+08:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://bennachen.github.io/blog/2015/02/04/octopressda-jian/</loc>
+    <loc>http://bennachen.github.io/blog/20150204/octopressda-jian/</loc>
     <lastmod>2015-02-04T10:25:41+08:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://bennachen.github.io/blog/archives/</loc>
-    <lastmod>2015-02-07T10:49:20+08:00</lastmod>
+    <lastmod>2015-02-13T10:15:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://bennachen.github.io/</loc>
-    <lastmod>2015-02-07T10:49:20+08:00</lastmod>
+    <lastmod>2015-02-13T10:15:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
