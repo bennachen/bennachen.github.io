@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Benna's Blog]]></title>
-  <link href="http://bennachen.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[分类：octopress | Benna's Blog]]></title>
+  <link href="http://bennachen.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://bennachen.github.io/"/>
   <updated>2015-02-13T10:25:21+08:00</updated>
   <id>http://bennachen.github.io/</id>
@@ -71,18 +71,18 @@ code snippet
 
 <p>效果如下：</p>
 
-<figure class='code'><figcaption><span>Discover if a number is prime</span><a href='http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/'>Source </a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><figure class='code'><figcaption><span>Discover if a number is prime <a href="http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/">http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/</a> Source </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Fixnum</span>
 </span><span class='line'>  <span class="k">def</span> <span class="nf">prime?</span>
-</span><span class='line'>    <span class="p">(</span><span class="s1">&#39;1&#39;</span> <span class="o">*</span> <span class="nb">self</span><span class="p">)</span> <span class="o">!~</span> <span class="sr">/^1?$|^(11+?)\1+$/</span>
+</span><span class='line'>    <span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="mi">1</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">*</span> <span class="nb">self</span><span class="p">)</span> <span class="o">!~</span> <span class="sr">/^1?$|^(11+?)\1+$/</span>
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></p>
 
 <h4>从本地文件引入代码块</h4>
 
@@ -101,8 +101,7 @@ code snippet
 </code></pre>
 
 <p>如需要语法高亮可添加文件后缀。
-效果如下：</p>
-
+效果如下：
 <div><script src='https://gist.github.com/4321346.js?file=gistfile1.diff'></script>
 <noscript><pre><code>@@ -590,7 +590,7 @@ class SpritesTest &lt; Test::Unit::TestCase
   it &quot;should generate a sprite from nested folders&quot; do
@@ -112,7 +111,7 @@ code snippet
       @include all-nested-sprites;
     SCSS
     assert_correct css, &lt;&lt;-CSS</code></pre></noscript></div>
-
+</p>
 
 <h3>插图</h3>
 
@@ -129,19 +128,14 @@ code snippet
 
 <p>官网搭建步骤<a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a></p>
 
-<p>1.安装<a href="http://git-scm.com/">Git</a>. 用<a href="http://brew.sh/index_zh-cn.html">Homebrew</a>安装或更新比较方便。安装好brew后可用如下命令诊断安装中出现的问题并提示修复方法</p>
+<p>1.安装<a href="http://git-scm.com/">Git</a>. 用<a href="http://brew.sh/index_zh-cn.html">Homebrew</a>安装或更新比较方便。安装好brew后可用如下命令诊断安装中出现的问题并提示修复方法
+<code>ruby
+brew doctor
+</code>
+之后安装git：</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">brew</span> <span class="n">doctor</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>之后安装git：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">brew</span> <span class="n">install</span> <span class="n">git</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<pre><code class="ruby">brew install git
+</code></pre>
 
 <!-- more -->
 
@@ -150,35 +144,22 @@ code snippet
 
 <h3>搭建octopress</h3>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">git</span> <span class="nb">clone</span> <span class="ss">git</span><span class="p">:</span><span class="sr">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">imathis</span><span class="o">/</span><span class="n">octopress</span><span class="o">.</span><span class="n">git</span>    <span class="n">octopress</span>
-</span><span class='line'><span class="n">cd</span> <span class="n">octopress</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1"># 安装依赖</span>
-</span><span class='line'><span class="n">gem</span> <span class="n">install</span> <span class="n">bundler</span>
-</span><span class='line'><span class="n">rbenv</span> <span class="n">rehash</span>    <span class="c1"># If you use rbenv, rehash to be able to run the bundle command</span>
-</span><span class='line'><span class="n">bundle</span> <span class="n">install</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1"># 安装默认主题</span>
-</span><span class='line'><span class="n">rake</span> <span class="n">install</span>
-</span></code></pre></td></tr></table></div></figure>
+<pre><code class="ruby">    git clone git://github.com/imathis/octopress.git    octopress
+    cd octopress
 
+    # 安装依赖
+    gem install bundler
+    rbenv rehash    # If you use rbenv, rehash to be able to run the bundle command
+    bundle install
+
+    # 安装默认主题
+    rake install
+</code></pre>
 
 <p>本地安装后可用如下命令，在本地4000端口进行预览：</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">rake</span> <span class="n">preview</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<pre><code class="ruby">rake preview
+</code></pre>
 
 <h3>部署到github pages</h3>
 
@@ -186,28 +167,20 @@ code snippet
 2.创建repository.<code>repository name</code>设置<code>[your_username].github.io</code>，[your_username] 是你 Github 上的账户名。  <br/>
 3.终端执行：</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">rake</span> <span class="n">setup_github_pages</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<pre><code class="ruby">rake setup_github_pages
+</code></pre>
 
 <p>根据提示输入上述创建的repo，再执行如下：</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">rake</span> <span class="n">generate</span>
-</span><span class='line'><span class="n">rake</span> <span class="n">deploy</span>
-</span></code></pre></td></tr></table></div></figure>
+<pre><code class="ruby">rake generate
+rake deploy
+</code></pre>
 
-
-<p>需执行两条命令，不想这么麻烦？可直接使用：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">rake</span> <span class="n">gen_deploy</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>即可在<a href="http://your_username.github.io/">http://your_username.github.io/</a> 看到创建的页面。太方便了！！</p>
+<p>需执行两条命令，不想这么麻烦？可直接使用：
+<code>ruby
+rake gen_deploy
+</code>
+即可在<a href="http://your_username.github.io/">http://your_username.github.io/</a> 看到创建的页面。太方便了！！</p>
 
 <p>4.写博客</p>
 
